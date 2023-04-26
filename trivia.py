@@ -1,4 +1,5 @@
 import random
+import requests
 
 
 user_name = input("Hi there! What's your name? \n")
@@ -79,6 +80,14 @@ elif temp_trivia_type == 2:
     trivia_type = "multiple"
 
 API_URL = f"https://opentdb.com/api.php?amount={amount_of_questions}&category={category}&difficulty={difficulty}&type={trivia_type}"
+
+response = requests.get(API_URL)
+
+print(type(response))
+
+response = response.json()
+
+print(response)
 
 print("Name:", user_name)
 print("Number of questions:", amount_of_questions)
