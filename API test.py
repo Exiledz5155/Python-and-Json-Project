@@ -3,10 +3,10 @@ import json
 
 params = {'limit': 50}
 
-response_API = requests.get('https://the-trivia-api.com/v2/questions', params=params)
-print(response_API.status_code)
+response = requests.get('https://the-trivia-api.com/v2/questions', params=params)
+print(response.status_code)
 
-data = response_API.text
+data = response.text
 json_data = json.loads(data)
 print(json_data)
 
